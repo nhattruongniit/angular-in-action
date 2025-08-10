@@ -1,0 +1,39 @@
+{
+  "stocks": [
+    { 
+      "id": 1, 
+      "symbol": "AAPL",
+      "lastTradePriceOnly": 182.25,
+      "change": 0.45,
+      "changePercent": 0.25
+    },
+    { 
+      "id": 2, 
+      "symbol": "GOOGL",
+      "lastTradePriceOnly": 2800.50,
+      "change": -15.30,
+      "changePercent": -0.54
+    },
+    { 
+      "id": 3, 
+      "symbol": "FB",
+      "lastTradePriceOnly": 3400.00,
+      "change": 20.00,
+      "changePercent": 0.59
+    },
+    { 
+      "id": 4, 
+      "symbol": "AMZN",
+      "lastTradePriceOnly": 3500.75,
+      "change": -10.50,
+      "changePercent": -0.30
+    },
+    { 
+      "id": 5, 
+      "symbol": "TWTR",
+      "lastTradePriceOnly": 65.00,
+      "change": 1.25,
+      "changePercent": 1.95
+    }
+  ]
+}
