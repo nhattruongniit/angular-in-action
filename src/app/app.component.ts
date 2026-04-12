@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { StockInterface, StocksService } from './services/stocks.service';
-// import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,38 +8,17 @@ import { StockInterface, StocksService } from './services/stocks.service';
   standalone: false // This is not necessary if you are using the module system
 })
 export class AppComponent implements OnInit {
-  title = 'angular-scratch';
-  stocks: StockInterface[] = [];
-  loading = false;
-  error: string | null = null;
+  stocks: Array<StockInterface> = [];
 
   constructor(
-    private stockService: StocksService
+    public stockService: StocksService
   ) {
     // Initialization logic can go here
-    
+    stockService.load(['AAPL']).subscribe(stocks => {
+      this.stocks = stocks
+    });
   }
 
   ngOnInit(): void {
-    this.getStocks();
-  }
-
-  getStocks(): void {
-    this.loading = true;
-    this.error = null;
-
-    this.stockService.get().subscribe({
-      next: (stocks: StockInterface[]) => {
-        this.stocks = stocks;
-        this.loading = false;
-
-        console.log('Stocks loaded:', this.stocks);
-      },
-      error: (err: any) => {
-        this.error = 'Failed to load stocks';
-        console.error(err);
-        this.loading = false;
-      }
-    })
   }
 }
