@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/internal/operators/map';
 
 let stocks: Array<string> = ['AAPL', 'GOOGL', 'FB', 'AMZN', 'TWTR'];
 let service: string = 'http://localhost:3000';
@@ -20,7 +19,7 @@ export class StocksService {
   }
 
   get() {
-    return this.http.get<StockInterface[]>(`${service}/stocks`);
+    return stocks.slice();
   }
 
   add(stock: string) {
@@ -33,9 +32,7 @@ export class StocksService {
     return this.get();
   }
 
-  load(symbols: Array<string>) {
-    return this.get().pipe(
-      map((stocks: StockInterface[]) => stocks.filter(stock => symbols.includes(stock.symbol)))
-    );
+  load() {
+    return this.http.get<Array<StockInterface>>(service + '/stocks');
   }
 }
