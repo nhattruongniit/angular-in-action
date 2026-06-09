@@ -1,8 +1,24 @@
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--12-col" *ngIf="!stocks" style="text-align: center;">
-    Loading
+<div class="container mt-2">
+  <div class="card card-block">
+    <nav class="navbar navbar-dark bg-inverse mb-1">
+      <h1 class="navbar-brand mb-0">Overall Metric</h1>
+    </nav>
   </div>
-  <div class="mdl-cell mdl-cell--3-col" *ngFor="let stock of stocks">
-    <summary class="stock_layout" [stock]="stock"></summary>
+  <div class="row">
+    <app-metric
+      class="col-sm-6"
+      [used]="cpu.used"
+      [available]="cpu.available"
+      [title]="'CPU'"
+      [description]="'utilization of CPU cores'"
+    ></app-metric>
+
+    <app-metric
+      class="col-sm-6"
+      [used]="mem.used"
+      [available]="mem.available"
+      [title]="'Memory'"
+      [description]="'utilization of memory in GB'"
+    ></app-metric>
   </div>
 </div>

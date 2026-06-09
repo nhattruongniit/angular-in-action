@@ -6,16 +6,18 @@ import { AppComponent } from './app.component';
 import { StocksService } from './services/stocks.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutes } from './app.routers';
+import { MetricComponent } from './components/metric/metric.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     DashboardComponent,
-    AppRoutes
+    MetricComponent,
+    AppRoutes,
   ],
   providers: [StocksService],
   bootstrap: [AppComponent]
