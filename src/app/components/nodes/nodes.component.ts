@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-nodes',
+  selector: '[app-nodes]',
   imports: [],
   templateUrl: './nodes.component.html',
   styleUrl: './nodes.component.scss'

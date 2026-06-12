@@ -1,4 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NodesComponent } from "../nodes/nodes.component";
+import { NodesRowComponent } from "../nodes-row/nodes-row.component";
+import { CommonModule } from '@angular/common';
 import { MetricComponent } from '../metric/metric.component';
 
 interface Metric {
@@ -13,7 +16,7 @@ interface Node {
 }
 @Component({
   selector: 'app-dashboard',
-  imports: [MetricComponent],
+  imports: [NodesComponent, NodesRowComponent, CommonModule, MetricComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
