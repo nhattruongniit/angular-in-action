@@ -1,11 +1,12 @@
 import { PercentPipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: '[app-nodes-row]',
   imports: [PercentPipe],
   templateUrl: './nodes-row.component.html',
-  styleUrl: './nodes-row.component.scss'
+  styleUrl: './nodes-row.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NodesRowComponent {
   @Input() node: any;
