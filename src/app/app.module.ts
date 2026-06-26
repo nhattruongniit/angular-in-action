@@ -7,6 +7,7 @@ import { StocksService } from './services/stocks.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutes } from './app.routers';
 import { MetricComponent } from './components/metric/metric.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MetricComponent } from './components/metric/metric.component';
     DashboardComponent,
     MetricComponent,
     AppRoutes,
+    NavbarComponent
   ],
   providers: [StocksService],
   bootstrap: [AppComponent],

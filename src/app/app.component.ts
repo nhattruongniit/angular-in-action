@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
   standalone: false // This is not necessary if you are using the module system
 })
 export class AppComponent {
+  @ViewChild(DashboardComponent) dashboard: DashboardComponent;
+
+  refresh() {
+    this.dashboard.generateData();
+  }
 }
